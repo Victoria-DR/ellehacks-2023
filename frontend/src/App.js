@@ -9,6 +9,7 @@ import Login from "./pages/login";
 import Contact from "./pages/contact";
 import PageNotFound from "./pages/pageNotFound";
 import Navbar from "./components/Navbar";
+import CreateGarden from "./pages/createGarden";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about-garden" element={<AboutGarden />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/creategarden" element={<CreateGarden />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </Router>

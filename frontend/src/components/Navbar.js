@@ -39,24 +39,12 @@ function Navbar() {
     <AppBar style={{ background: "#333333" }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "polly",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Gardenize
-          </Typography>
+          <div className="flex-auto">
+            <img
+              className="object-fit: scale-down h-10"
+              src="./WGardenize.svg"
+            />
+          </div>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -93,12 +81,12 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <div className="flex-auto">
+          {/* <div className="flex-auto">
             <img
               className="object-fit: scale-down h-10"
               src="./WGardenize.svg"
             />
-          </div>
+          </div> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
