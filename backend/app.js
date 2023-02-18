@@ -8,6 +8,7 @@ const createGarden = require('./routes/gardens/createGarden');
 const joinGarden = require('./routes/gardens/joinGarden');
 const fetchGarden = require('./routes/gardens/fetchGarden');
 const suggestPlants = require('./routes/gardens/suggestPlants');
+const fetchPlant = require ('./routes/gardens/fetchPlant');
 const createPost = require('./routes/posts/createPost');
 const fetchPost = require('./routes/posts/fetchPost');
 
@@ -21,7 +22,9 @@ app.post('/login', login);
 app.post('/createGarden', createGarden);
 app.post('/joinGarden', joinGarden);
 app.post('/fetchGarden', fetchGarden);
+
 app.post('/suggestPlants', suggestPlants);
+app.post('/fetchPlant', fetchPlant);
 
 app.post('/createPost', createPost);
 app.post('/fetchPost', fetchPost);
