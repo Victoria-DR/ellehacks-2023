@@ -62,16 +62,20 @@ const CreateGarden = () => {
                     </label>
                     <input
                       type="text"
-                      {...register("location")}
+                      {...register("l3Region")}
                       required
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     />
                   </div>
 
                   <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                    <input type="checkbox" {...register("to-eat")} required />
+                    <input
+                      type="checkbox"
+                      {...register("to-edibleOption")}
+                      required
+                    />
                     <label
-                      htmlFor="location"
+                      htmlFor="edibleOption"
                       className="ml-4 text-sm font-medium text-gray-700"
                     >
                       To Eat
@@ -79,9 +83,13 @@ const CreateGarden = () => {
                   </div>
 
                   <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                    <input type="checkbox" {...register("to-enjoy")} required />
+                    <input
+                      type="checkbox"
+                      {...register("to-biodiversityOption")}
+                      required
+                    />
                     <label
-                      htmlFor="purpose"
+                      htmlFor="biodiversityOption"
                       className="ml-4 text-sm font-medium text-gray-700"
                     >
                       To Enjoy
