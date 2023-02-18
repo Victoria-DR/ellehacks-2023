@@ -1,0 +1,25 @@
+:root {
+  --persian-green: #26a69aff;
+  --jet: #333333ff;
+  --seasalt: #fcfaf9ff;
+  --desert-sand: #f3d3bdff;
+  --davys-gray: #5e5e5eff;
+}
+
+html,
+body,
+main {
+  font-family: Lato, sans-serif;
+  min-height: 100%;
+  background-color: var(--seasalt);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--dark);
+}
