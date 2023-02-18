@@ -1,15 +1,20 @@
-var express = require('express');
-var cors = require('cors');
+const express = require('express');
+const cors = require('cors');
 
-var signup = require('.routes/signup');
-var login = require('./routes/login');
+const signup = require('.routes/signup');
+const login = require('./routes/login');
+const createGarden = require('./routes/createGarden');
+const joinGarden = require('./routes/joinGarden');
 
-var app = express();
+const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.post('/signup', signup);
 app.post('/login', login);
+
+app.post('/createGarden', createGarden);
+app.post('/joinGarden', joinGarden);
 
 app.listen(3001, () => {
   console.log('Server running on port 3001');

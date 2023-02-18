@@ -1,9 +1,9 @@
-const doc = require('firebase/firestore').doc;
-const setDoc = requre('firebase/firestore').setDoc;
+const { doc, setDoc } = require('firebase/firestore');
 
 const signup = async(req, res, next) => {
   await setDoc(doc(db, 'users', req.body.email), {
     firstName: req.body.firstName,
+    gardens: [],
     lastName: req.body.lastName,
     password: req.body.password
   });
