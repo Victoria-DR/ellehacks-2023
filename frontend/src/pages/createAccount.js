@@ -11,7 +11,7 @@ const CreateAccount = () => {
               Personal Information
             </h3>
             <p className="mt-1 text-sm text-gray-600">
-              Use a permanent address where you can receive mail.
+              Just a few simple steps to make your account.
             </p>
           </div>
         </div>
@@ -34,7 +34,7 @@ const CreateAccount = () => {
                       name="first-name"
                       id="first-name"
                       autoComplete="given-name"
-                      className="mt-1 block w-fbg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500ull rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     />
                   </div>
 
