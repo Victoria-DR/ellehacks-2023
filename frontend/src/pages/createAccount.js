@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 // import "../index.css";
@@ -7,8 +8,12 @@ const CreateAccount = () => {
   const { register, handleSubmit, reset } = useForm();
   const [data, setData] = useState("");
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async(data) => {
+    const res = await axios.post(
+      'http://localhost:3001/signup',
+      data
+    );
+    console.log(res);
     reset();
   };
 

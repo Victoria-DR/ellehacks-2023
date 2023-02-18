@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import "../index.css";
 import { useState } from "react";
@@ -9,8 +10,12 @@ const Login = () => {
   const { register, handleSubmit, reset } = useForm();
   const [data, setData] = useState("");
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async(data) => {
+    const res = await axios.post(
+      'http://localhost:3001/login',
+      data
+    );
+    console.log(res);
     reset();
   };
   return (
@@ -40,11 +45,11 @@ const Login = () => {
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
-                <label htmlFor="email-address" className="sr-only">
+                <label htmlFor="email" className="sr-only">
                   Email address
                 </label>
                 <input
-                  {...register("email-address")}
+                  {...register("email")}
                   type="email"
                   required
                   className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-teal-500 focus:outline-none focus:ring-teal-500 sm:text-sm"

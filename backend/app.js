@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
-const signup = require('.routes/signup');
+const signup = require('./routes/signup');
 const login = require('./routes/login');
 const createGarden = require('./routes/createGarden');
 const joinGarden = require('./routes/joinGarden');

@@ -10,6 +10,8 @@ const suggestPlants = async(req, res, next) => {
       `http://trefle.io/api/v1/distributions/${gardenSnap.data().l3Region}/plants?token=${process.env.TREFLE_API_KEY}${gardenSnap.data().edibleOption ? '?vegetable=true' : ''}`
     );
     res.send(plantsInRegion.data.slice(gardenSnap.data().numPlantTypes - 1));
+  } else {
+    console.log('Garden not found.');
   }
 };
 
