@@ -1,5 +1,7 @@
 const { getDoc, FieldValue } = require('firebase/firestore');
 
+const db = require('../firebaseConfig');
+
 const joinGarden = async(req, res, next) => {
   const gardenRef = db.collection('gardens').doc(req.body.garden);
   const gardenSnap = await getDoc(gardenRef);
@@ -13,6 +15,8 @@ const joinGarden = async(req, res, next) => {
     await gardenRef.update({
       numMembers: gardenSnap.data().numMembers + 1
     });
+  } else {
+    console.log('Garden not found.');
   }
 
   res.send(req.body.gardenName);
