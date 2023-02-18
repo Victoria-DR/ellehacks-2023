@@ -1,5 +1,5 @@
-var initializeApp = require('firebase/app').initializeApp;
-var getFirestore = require('firebase/firestore').getFirestore;
+const initializeApp = require('firebase/app').initializeApp;
+const getFirestore = require('firebase/firestore').getFirestore;
 
 const firebaseConfig = {
   apiKey: "AIzaSyCj-X1-v2EtAjYXnm6kA8lCLts9pLc6dvM",

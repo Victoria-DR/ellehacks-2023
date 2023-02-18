@@ -1,5 +1,5 @@
-var doc = require('firebase/firestore').doc;
-var getDoc = require('firebase/firestore').getDoc;
+const doc = require('firebase/firestore').doc;
+const getDoc = require('firebase/firestore').getDoc;
 
 const db = require('../firebaseConfig');
 
