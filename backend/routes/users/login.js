@@ -1,6 +1,6 @@
 const { doc, getDoc } = require('firebase/firestore');
 
-const db = require('../firebaseConfig');
+const { db } = require('../../firebaseConfig');
 
 const login = async (req, res, next) => {
   const docRef = doc(db, 'users', req.body.email);

@@ -1,6 +1,6 @@
 const { doc, setDoc, FieldValue } = require('firebase/firestore');
 
-const db = require('../firebaseConfig');
+const { db } = require('../../firebaseConfig');
 
 const createGarden = async(req, res, next) => {
   await setDoc(doc(db, 'gardens', req.body.gardenName), {
@@ -10,7 +10,7 @@ const createGarden = async(req, res, next) => {
     l3Region: req.body.l3Region,
     numMembers: 1,
     numPlantTypes: req.body.numPlantTypes,
-    size: req.body.size
+    posts: []
   });
 
   const userRef = db.collection('users').doc(req.body.user);
