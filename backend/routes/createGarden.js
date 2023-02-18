@@ -7,11 +7,12 @@ const createGarden = async(req, res, next) => {
     edibleOption: req.body.edibleOption,
     l3Region: req.body.l3Region,
     numMembers: 1,
+    numPlantTypes: req.body.numPlantTypes,
     size: req.body.size
   });
 
   const userRef = db.collection('users').doc(req.body.user);
-  await userRef.update({
+   await userRef.update({
     gardens: FieldValue.arrayUnion(req.body.gardenName)
   });
 

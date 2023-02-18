@@ -2,7 +2,7 @@ const initializeApp = require('firebase/app').initializeApp;
 const getFirestore = require('firebase/firestore').getFirestore;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCj-X1-v2EtAjYXnm6kA8lCLts9pLc6dvM",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "ellehacks-2023.firebaseapp.com",
   projectId: "ellehacks-2023",
   storageBucket: "ellehacks-2023.appspot.com",
