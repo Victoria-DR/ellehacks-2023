@@ -1,7 +1,14 @@
 import React from "react";
+import Post from "../components/Post";
+import Navbar from "../components/Navbar";
 
 const AboutGarden = () => {
-  return <div className="bg-red-50">You can write your blogs!</div>;
+  return (
+    <>
+      <Navbar />
+      <div>hello</div>
+    </>
+  );
 };
 
 export default AboutGarden;
