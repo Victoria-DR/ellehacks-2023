@@ -1,6 +1,6 @@
 const { doc, setDoc, FieldValue } = require('firebase/firestore');
 
-const db = require('../../firebaseConfig');
+const { db } = require('../../firebaseConfig');
 
 const createGarden = async(req, res, next) => {
   await setDoc(doc(db, 'gardens', req.body.gardenName), {

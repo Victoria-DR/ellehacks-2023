@@ -8,6 +8,8 @@ const createGarden = require('./routes/gardens/createGarden');
 const joinGarden = require('./routes/gardens/joinGarden');
 const fetchGarden = require('./routes/gardens/fetchGarden');
 const suggestPlants = require('./routes/gardens/suggestPlants');
+const createPost = require('./routes/posts/createPost');
+const fetchPost = require('./routes/posts/fetchPost');
 
 const app = express();
 app.use(cors());
@@ -19,8 +21,10 @@ app.post('/login', login);
 app.post('/createGarden', createGarden);
 app.post('/joinGarden', joinGarden);
 app.post('/fetchGarden', fetchGarden);
-
 app.post('/suggestPlants', suggestPlants);
+
+app.post('/createPost', createPost);
+app.post('/fetchPost', fetchPost);
 
 app.listen(3001, () => {
   console.log('Server running on port 3001');
