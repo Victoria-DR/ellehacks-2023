@@ -2,7 +2,7 @@
 // tailwind.config.js
 const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -10,5 +10,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: "class",
+    }),
+  ],
 };
