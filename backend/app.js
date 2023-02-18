@@ -3,7 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const signup = require('./routes/users/signup');
-const login = require('./routes/login');
+const login = require('./routes/users/login');
 const createGarden = require('./routes/gardens/createGarden');
 const joinGarden = require('./routes/gardens/joinGarden');
 const fetchGarden = require('./routes/gardens/fetchGarden');
