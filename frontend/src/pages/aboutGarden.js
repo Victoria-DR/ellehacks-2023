@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar";
 const AboutGarden = () => {
   return (
     <>
-      <Navbar />
       <div>hello</div>
     </>
   );
