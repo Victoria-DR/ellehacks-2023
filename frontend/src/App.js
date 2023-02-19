@@ -11,6 +11,7 @@ import PageNotFound from "./pages/pageNotFound";
 import Navbar from "./components/Navbar";
 import CreateGarden from "./pages/createGarden";
 import GardenProfile from "./pages/gardenProfile";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/create-garden" element={<CreateGarden />} />
           <Route path="/garden-profile" element={<GardenProfile />} />
+          <Route path="/create-post" element={<CreatePost />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </Router>

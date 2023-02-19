@@ -1,25 +1,20 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Post from "../components/Post";
+import { CheckIcon } from "@heroicons/react/20/solid";
 
-const getPosts = async(gardenName) => {
-  const gardenData = await axios.post(
-    'http://localhost:3001/fetchGarden',
-    {
-      garden: gardenName
-    }
-  );
+const getPosts = async (gardenName) => {
+  const gardenData = await axios.post("http://localhost:3001/fetchGarden", {
+    garden: gardenName,
+  });
   const posts = gardenData.data.posts;
 
   let postsData = [];
   for (let i = 0; i < posts.length; i++) {
     const postId = posts[i];
-    const postData = await axios.post(
-      'http://localhost:3001/fetchPost',
-      {
-        postId
-      }
-    );
+    const postData = await axios.post("http://localhost:3001/fetchPost", {
+      postId,
+    });
     postsData.push(postData);
   }
 
@@ -27,11 +22,11 @@ const getPosts = async(gardenName) => {
 };
 
 const AboutGarden = () => {
-  const [ data, setData ] = useState(null);
+  const [data, setData] = useState(null);
 
   useEffect(async () => {
     try {
-      const data = await getPosts('mango');
+      const data = await getPosts("mango");
       setData(data);
     } catch (error) {
       console.log(error);
@@ -39,25 +34,40 @@ const AboutGarden = () => {
   }, []);
 
   if (!data) {
-    return (
-      <p>
-        Loading...
-      </p>
-    )
+    return <p>Loading...</p>;
   }
 
   return (
     <>
-      <div className="flex flex-col items-center">
-        { data.map(function (n) {
-            return <Post
+      <header className="bg-[#0D9488] shadow">
+        <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl tracking-tight text-stone-100 text-center">
+            Community Garden Feed
+          </h1>
+        </div>
+      </header>
+      <span className="sm:ml-3">
+        <button
+          type="button"
+          className="inline-flex items-center rounded-md border border-transparent bg-teal-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+        >
+          <CheckIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
+          Publish
+        </button>
+      </span>
+      <div className="flex flex-col items-center ontainer mx-auto mt-4 bg-stone-100 rounded-lg p-4 pt-10 pb-10 drop-shadow-lg">
+        {data.map(function (n) {
+          return (
+            <Post
               title={n.data.title}
-              datePosted={new Date(n.data.datePosted.seconds * 1000).toDateString()}
+              datePosted={new Date(
+                n.data.datePosted.seconds * 1000
+              ).toDateString()}
               text={n.data.text}
               imageUrl={n.data.image}
-            />;
-          })
-        }
+            />
+          );
+        })}
       </div>
     </>
   );

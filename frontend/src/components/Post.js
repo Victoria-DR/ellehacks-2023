@@ -18,9 +18,7 @@ const Post = (props) => {
     <Card sx={{ width: 290, mb: 2 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            props.author
-          </Avatar>
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe"></Avatar>
         }
         action={
           <IconButton aria-label="settings">
