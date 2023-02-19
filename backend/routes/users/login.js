@@ -8,13 +8,12 @@ const login = async (req, res, next) => {
   
   if (docSnap.exists()) {
     if (req.body.password === docSnap.data().password) {
-      console.log(docRef.id);
       res.send(docRef.id);
     } else {
-      console.log('Incorrect password.')
+      res.send('Incorrect password.')
     }
   } else {
-    console.log('Account does not exist.');
+    res.send('Account does not exist.');
   }
 };
 
