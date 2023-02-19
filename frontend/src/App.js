@@ -15,17 +15,19 @@ function App() {
   return (
     <>
       <Navbar />
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/newaccount" element={<CreateAccount />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about-garden" element={<AboutGarden />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/create-garden" element={<CreateGarden />} />
-          <Route path="/*" element={<PageNotFound />} />
-        </Routes>
-      </Router>
+      <div className="container mx-auto mt-4">
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/newaccount" element={<CreateAccount />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about-garden" element={<AboutGarden />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/create-garden" element={<CreateGarden />} />
+            <Route path="/*" element={<PageNotFound />} />
+          </Routes>
+        </Router>
+      </div>
     </>
   );
 }
