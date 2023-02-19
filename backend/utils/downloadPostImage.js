@@ -2,8 +2,8 @@ const { ref, getDownloadURL } = require('firebase/storage');
 
 const { storage } = require('../firebaseConfig');
 
-const downloadPostImage = (filePath) => {
-  getDownloadURL(ref(storage, filePath))
+const downloadPostImage = async(filePath) => {
+  await getDownloadURL(ref(storage, filePath))
     .then((url) => {
       return url;
     })

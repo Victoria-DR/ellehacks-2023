@@ -2,12 +2,12 @@ const { ref, uploadBytes } = require('firebase/storage');
 
 const { storage } = require('../firebaseConfig');
 
-const uploadPostImage = (data) => {
+const uploadPostImage = async(data) => {
   const imageRef = ref(storage, data.name);
   uploadBytes(imageRef, data.image).then((snapshot) => {
-    console.log('Image uploaded.');
-    return snapshot.metadata.fullPath;
+    console.log(snapshot);
   });
+  return await imageRef.getDownloadUrl();
 };
 
 module.exports = uploadPostImage;

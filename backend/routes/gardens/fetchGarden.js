@@ -1,9 +1,9 @@
-const { getDoc, FieldValue } = require('firebase/firestore');
+const { doc, getDoc } = require('firebase/firestore');
 
 const { db } = require('../../firebaseConfig');
 
 const fetchGarden = async(req, res, next) => {
-  const gardenRef = db.collection('gardens').doc(req.body.garden);
+  const gardenRef = doc(db, 'gardens', req.body.garden);
   const gardenSnap = await getDoc(gardenRef);
   
   if (gardenSnap.exists()) {

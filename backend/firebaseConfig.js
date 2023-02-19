@@ -9,7 +9,6 @@ const firebaseConfig = {
   storageBucket: "ellehacks-2023.appspot.com",
   messagingSenderId: "254632115786",
   appId: "1:254632115786:web:41c791e319d2cd264cb0b3",
-  storageBucket: ""
 };
 const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp);
