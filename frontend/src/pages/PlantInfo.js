@@ -30,32 +30,77 @@ const PlantInfo = () => {
   return (
     <>
       <NewNav />
-      <div className="container mx-auto">
-        <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-          <div className="w-full max-w-md space-y-8">
-            <div>
-              <img
-                className="max-h-40"
-                src={plantData.data.image_url}
-                alt="image of plant"
-              />
-              <h2 className="text-3xl">{plantData.data.common_name}</h2>
-            </div>
-            <div>
-              <h4 className="font-bold">Scientific Name</h4>
-              <p>{plantData.data.scientific_name}</p>
-              <h4 className="font-bold">Duration</h4>
-              <p>{plantData.data.duration}</p>
-              <h4 className="font-bold">Is A Vegetable</h4>
-              <p>{plantData.data.vegetable === "true" ? "Yes" : "No"}</p>
-              <h4 className="font-bold">Average Height</h4>
-              <p>{`${plantData.data.average_height[0]}cm`}</p>
-              <h4 className="font-bold">Days From Planting To Harvest</h4>
-              <p>{plantData.data.days_to_harvest}</p>
-              <h4 className="font-bold">Active Growth Periods</h4>
-              <p>{plantData.data.growth_months}</p>
-            </div>
+
+      <div className="container mx-auto p-4">
+        <div className="overflow-hidden bg-white shadow rounded-lg sm:rounded-lg p-4 mb-8">
+          <div className="px-4 py-5 sm:px-6">
+            <h3 className="text-lg font-medium leading-6 text-gray-900">
+              Plant Profile
+            </h3>
+            <p className="mt-1 max-w-2xl text-sm text-gray-500">
+              Specific and detailed information .
+            </p>
           </div>
+          <div className="border-t border-gray-200">
+            <dl>
+              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">
+                  Scientific Name
+                </dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  {plantData.data.scientific_name}
+                </dd>
+              </div>
+              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">Duration</dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  10 weeks
+                  {/* {plantData.data.duration} */}
+                </dd>
+              </div>
+              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">
+                  Is A Vegetable
+                </dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  {/* {plantData.data.vegetable === "true" ? "Yes" : "No"} */}
+                  Yes
+                </dd>
+              </div>
+              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">
+                  Average Height
+                </dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  {/* {`${plantData.data.average_height[0]}cm`} */}
+                  20 cm
+                </dd>
+              </div>
+              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">
+                  Days From Planting To Harvest
+                </dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  {/* {plantData.data.days_to_harvest} */}5 days
+                </dd>
+              </div>
+              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">
+                  Active Growth Periods
+                </dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  {plantData.data.growth_months}
+                  January, February, March, April
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div className="p-6 flex justify-center rounded-lg shadow bg-gray-100 sm:rounded-lg col-span-4 lg:col-span-5">
+          <img
+            src={plantData.data.image_url}
+            className="object-contain w-full object-center"
+          />
         </div>
       </div>
     </>

@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const LongCard = ({ nextWater, harvest, planted, imageLink, plant }) => {
+  const navigate = useNavigate();
   return (
     <>
-      <li className="rounded-md bg-zinc-100 p-4 drop-shadow-lg">
+      <li
+        onClick={() => navigate("/plantInfo")}
+        className="rounded-md bg-zinc-100 p-4 drop-shadow-lg hover:bg-zinc-200"
+      >
         <div className="flex items-center gap-x-6">
           <img
             className="h-20 object-contain rounded-md"
