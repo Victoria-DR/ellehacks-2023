@@ -16,6 +16,7 @@ import PlantInfo from "./pages/PlantInfo";
 import SearchGarden from "./pages/SearchGarden";
 import Choice from "./pages/Choice";
 import NewNav from "./components/NewNav";
+import Chat from "./pages/Chat";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/plantInfo" element={<PlantInfo />} />
           <Route path="/search" element={<SearchGarden />} />
           <Route path="/choice" element={<Choice />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </Router>
