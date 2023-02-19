@@ -17,37 +17,31 @@ const CreateGarden = () => {
   return (
     <div className="container mt-10">
       <div className="md:grid md:grid-cols-3 md:gap-6">
-        <div className="md:col-span-1">
-          <div className="px-4 sm:px-0">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">
-              Create your Garden
-            </h3>
-            <p className="mt-1 text-sm text-gray-600">
-              Go crazy! Create your own garden!
-            </p>
-          </div>
-        </div>
         {/* Form */}
         <div className="mt-5 md:col-span-2 md">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="overflow-hidden shadow sm:rounded-md">
               <div className="bg-white px-4 py-5 sm:p-6">
-                <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                  <label
-                    htmlFor="num-plant-types"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Number of Plant Types
-                  </label>
-                  <input
-                    type="number"
-                    {...register("numPlantTypes")}
-                    required
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  />
-                </div>
+                <h3 className="text-lg font-medium leading-6 text-gray-900 mb-4">
+                  Create your Garden
+                </h3>
+                <hr class="h-px  bg-gray-200 border-0 dark:bg-gray-700 mb-8"></hr>
 
                 <div className="grid grid-cols-6 gap-6">
+                  <div className="col-span-6 sm:col-span-6 lg:col-span-2">
+                    <label
+                      htmlFor="num-plant-types"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Number of Plant Types
+                    </label>
+                    <input
+                      type="number"
+                      {...register("numPlantTypes")}
+                      required
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    />
+                  </div>
                   <div className="col-span-6 sm:col-span-6 lg:col-span-2">
                     <label
                       htmlFor="season"
