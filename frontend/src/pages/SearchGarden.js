@@ -1,12 +1,11 @@
 import React from "react";
-import LongCard from "../components/LongCard";
 import NewNav from "../components/NewNav";
-import TitlebarImageList from "../components/Recommended";
 import Search from "../components/Search";
 
 const SearchGarden = () => {
   return (
     <>
+      <NewNav />
       <div className="container mx-auto mt-4 bg-stone-100 rounded-lg p-4 pt-10 pb-10 drop-shadow-lg ">
         <div class="mx-auto grid max-w-7xl gap-y-10 gap-x-8 px-6 lg:px-8 xl:grid-cols-3 ">
           <div class="max-w-2xl">

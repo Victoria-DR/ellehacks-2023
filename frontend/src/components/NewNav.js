@@ -6,6 +6,7 @@ const navigation = [
   { name: "Select", href: "/choice", current: false },
   { name: "Search", href: "/search", current: false },
   { name: "Feed", href: "/about-garden", current: false },
+  { name: "Chat", href: "/chat", current: false },
 ];
 
 function classNames(...classes) {

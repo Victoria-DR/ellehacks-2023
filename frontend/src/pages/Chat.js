@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import NewNav from "../components/NewNav";
 
 const Chat = () => {
   const { register, handleSubmit, resetField } = useForm();
@@ -11,6 +12,7 @@ const Chat = () => {
   };
   return (
     <>
+      <NewNav />
       <div className="mt-5 md:col-span-2 md:mt-0">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="shadow sm:overflow-hidden sm:rounded-md">

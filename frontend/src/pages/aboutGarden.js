@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Post from "../components/Post";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import CreatePost from "../components/CreatePost";
+import NewNav from "../components/NewNav";
 
 const getPosts = async (gardenName) => {
   const gardenData = await axios.post("http://localhost:3001/fetchGarden", {
@@ -40,6 +41,7 @@ const AboutGarden = () => {
 
   return (
     <>
+      <NewNav />
       <header className="bg-[#0D9488] shadow">
         <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl tracking-tight text-stone-100 text-center">

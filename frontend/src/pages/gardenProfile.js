@@ -5,6 +5,7 @@ import TitlebarImageList from "../components/Recommended";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { UserGroupIcon } from "@heroicons/react/20/solid";
+import NewNav from "../components/NewNav";
 
 const GardenProfile = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const GardenProfile = () => {
     "https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG9tYXRvfGVufDB8fDB8fA%3D%3D&w=1000&q=80";
   return (
     <>
+      <NewNav />
       <header className="bg-[#0D9488] shadow">
         <div className="flex justify-evenly mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl tracking-tight text-stone-100 text-center align-middle">

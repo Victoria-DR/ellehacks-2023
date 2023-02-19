@@ -6,7 +6,6 @@ import Home from "./pages";
 import CreateAccount from "./pages/createAccount";
 import AboutGarden from "./pages/aboutGarden";
 import Login from "./pages/login";
-import Contact from "./pages/contact";
 import PageNotFound from "./pages/pageNotFound";
 import Navbar from "./components/Navbar";
 import CreateGarden from "./pages/createGarden";
@@ -21,18 +20,13 @@ import Chat from "./pages/Chat";
 function App() {
   return (
     <div className="bg-[#E9EFEA]">
-      <NewNav />
-
       <Router>
         <Routes>
           <Route exact path="/" element={<Login />} />
           <Route path="/signup" element={<CreateAccount />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/about-garden" element={<AboutGarden />} />
-          {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/create-garden" element={<CreateGarden />} />
           <Route path="/garden-profile" element={<GardenProfile />} />
-          {/* <Route path="/create-post" element={<CreatePost />} /> */}
           <Route path="/plantInfo" element={<PlantInfo />} />
           <Route path="/search" element={<SearchGarden />} />
           <Route path="/choice" element={<Choice />} />

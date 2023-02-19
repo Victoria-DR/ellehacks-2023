@@ -1,15 +1,12 @@
 import React from "react";
-import LongCard from "../components/LongCard";
 import NewNav from "../components/NewNav";
-import TitlebarImageList from "../components/Recommended";
-import Search from "../components/Search";
 import { useNavigate } from "react-router-dom";
-
 const Choice = () => {
   const navigate = useNavigate();
 
   return (
     <>
+      <NewNav />
       <div className="container mx-auto mt-4 bg-stone-100 rounded-lg p-4 pt-10 pb-10 drop-shadow-lg gap-y-10 ">
         <h4 class="flex justify-center text-4xl text-center font-bold  text-gray-900">
           Select your Community

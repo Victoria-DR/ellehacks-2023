@@ -1,10 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import NewNav from "../components/NewNav";
 
 const PageNotFound = () => {
   const navigate = useNavigate();
   return (
     <div>
+      <NewNav />
       <main className="grid min-h-full place-items-center bg-white py-24 px-6 sm:py-32 lg:px-8">
         <div className="text-center">
           <p className="text-base font-semibold text-teal-600">404</p>
