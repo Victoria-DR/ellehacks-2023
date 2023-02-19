@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar";
 import CreateGarden from "./pages/createGarden";
 import GardenProfile from "./pages/gardenProfile";
 import CreatePost from "./pages/CreatePost";
+import PlantInfo from "./pages/PlantInfo";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/create-garden" element={<CreateGarden />} />
           <Route path="/garden-profile" element={<GardenProfile />} />
           <Route path="/create-post" element={<CreatePost />} />
+          <Route path="/plantInfo" element={<PlantInfo />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </Router>
