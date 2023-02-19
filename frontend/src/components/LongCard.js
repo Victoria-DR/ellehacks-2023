@@ -3,7 +3,7 @@ import React from "react";
 const LongCard = () => {
   return (
     <>
-      <li className="rounded-md bg-zinc-100 p-4 drop-shadow-md">
+      <li className="rounded-md bg-zinc-100 p-4 drop-shadow-lg">
         <div className="flex items-center gap-x-6">
           <img
             className="h-16 w-16 rounded-md"

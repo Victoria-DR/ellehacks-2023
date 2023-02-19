@@ -14,7 +14,7 @@ import GardenProfile from "./pages/gardenProfile";
 
 function App() {
   return (
-    <div className="bg-[#E9EFEA]">
+    <div className="bg-[#E9EFEA] mb-200">
       <Navbar />
 
       <Router>
