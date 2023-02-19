@@ -22,7 +22,7 @@ export default function Search() {
       title: "",
     });
     toggleOpen(false);
-    navigate("/about-garden");
+    navigate("/garden-profile");
   };
 
   const [dialogValue, setDialogValue] = React.useState({

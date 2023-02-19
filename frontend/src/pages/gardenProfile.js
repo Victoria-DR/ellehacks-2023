@@ -1,18 +1,31 @@
 import React from "react";
 import LongCard from "../components/LongCard";
-import NewNav from "../components/NewNav";
-import TitlebarImageList from "../components/Recommended";
 
-const gardenProfile = () => {
+import TitlebarImageList from "../components/Recommended";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { UserGroupIcon } from "@heroicons/react/20/solid";
+
+const GardenProfile = () => {
+  const navigate = useNavigate();
   const defaultImg =
     "https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG9tYXRvfGVufDB8fDB8fA%3D%3D&w=1000&q=80";
   return (
     <>
       <header className="bg-[#0D9488] shadow">
-        <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-evenly mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl tracking-tight text-stone-100 text-center">
             Garden Dashboard
           </h1>
+
+          <button
+            type="button"
+            onClick={() => navigate("/about-garden")}
+            className=" inline-flex items-center rounded-md border border-transparent bg-[#333333ff] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#5e5e5eff] focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+          >
+            <UserGroupIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
+            Discuss
+          </button>
         </div>
       </header>
       <div className="container mx-auto mt-4 bg-stone-100 rounded-lg p-4 pt-10 pb-10 drop-shadow-lg ">
@@ -94,4 +107,4 @@ const gardenProfile = () => {
   );
 };
 
-export default gardenProfile;
+export default GardenProfile;

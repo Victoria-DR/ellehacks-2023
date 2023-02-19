@@ -14,6 +14,7 @@ import GardenProfile from "./pages/gardenProfile";
 
 import PlantInfo from "./pages/PlantInfo";
 import SearchGarden from "./pages/SearchGarden";
+import Choice from "./pages/Choice";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           {/* <Route path="/create-post" element={<CreatePost />} /> */}
           <Route path="/plantInfo" element={<PlantInfo />} />
           <Route path="/search" element={<SearchGarden />} />
+          <Route path="/choice" element={<Choice />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </Router>
