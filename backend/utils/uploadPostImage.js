@@ -1,4 +1,4 @@
-const { ref, uploadBytes, getDownloadURL } = require('firebase/storage');
+const { ref, uploadBytes } = require('firebase/storage');
 
 const { storage } = require('../firebaseConfig');
 

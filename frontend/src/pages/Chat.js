@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -6,8 +7,15 @@ import NewNav from "../components/NewNav";
 const Chat = () => {
   const { register, handleSubmit, resetField } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async(data) => {
+    const res = await axios.post(
+      'http://localhost:3001/chat',
+      {
+        userName: 'Victoria',
+        message: data.message
+      }
+    );
+    console.log(res.data);
     resetField("message");
   };
   return (
