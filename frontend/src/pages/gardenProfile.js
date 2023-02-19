@@ -14,9 +14,9 @@ const GardenProfile = () => {
     <>
       <header className="bg-[#0D9488] shadow">
         <div className="flex justify-evenly mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl tracking-tight text-stone-100 text-center">
+          <h2 className="text-2xl tracking-tight text-stone-100 text-center align-middle">
             Garden Dashboard
-          </h1>
+          </h2>
 
           <button
             type="button"
