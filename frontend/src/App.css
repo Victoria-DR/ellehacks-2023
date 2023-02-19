@@ -11,7 +11,7 @@ body,
 main {
   font-family: Inter, sans-serif;
   min-height: 100%;
-  background-color: var(--seasalt);
+  background-color: #e9efea;
 }
 
 h1 {
