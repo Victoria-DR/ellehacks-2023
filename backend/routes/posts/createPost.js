@@ -10,7 +10,7 @@ const createPost = async(req, res, next) => {
     res.send('Post failed; this text is toxic.');
   } else {
     const imageFilePath = req.body.image ? uploadPostImage(req.body.image) : '';
-    const postTitle = generatePostTitle(req.body.text);
+    const postTitle = await generatePostTitle(req.body.text);
 
     const newPostRef = db.collection('posts').doc();
     await newPostRef.set({
