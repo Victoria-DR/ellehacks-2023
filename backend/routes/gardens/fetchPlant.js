@@ -4,7 +4,6 @@ const fetchPlant = async(req, res, next) => {
   const plantData = await axios(
     `http://trefle.io/api/v1/plants/${req.body.plantId}?token=${process.env.TREFLE_API_KEY}`
   );
-  console.log(plantData.data.data.main_species)
   const {
     common_name,
     scientific_name,
