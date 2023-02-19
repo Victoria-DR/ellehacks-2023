@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Post from "../components/Post";
 import { CheckIcon } from "@heroicons/react/20/solid";
+import CreatePost from "../components/CreatePost";
 
 const getPosts = async (gardenName) => {
   const gardenData = await axios.post("http://localhost:3001/fetchGarden", {
@@ -46,16 +47,9 @@ const AboutGarden = () => {
           </h1>
         </div>
       </header>
-      <span className="sm:ml-3">
-        <button
-          type="button"
-          className="inline-flex items-center rounded-md border border-transparent bg-teal-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
-        >
-          <CheckIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-          Publish
-        </button>
-      </span>
+      <CreatePost />
       <div className="flex flex-col items-center ontainer mx-auto mt-4 bg-stone-100 rounded-lg p-4 pt-10 pb-10 drop-shadow-lg">
+        <span className="sm:ml-3"></span>
         {data.map(function (n) {
           return (
             <Post

@@ -11,7 +11,7 @@ const SearchGarden = () => {
         <div class="mx-auto grid max-w-7xl gap-y-10 gap-x-8 px-6 lg:px-8 xl:grid-cols-3 ">
           <div class="max-w-2xl">
             <h4 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Search
+              Select your Community
             </h4>
             <p class="mt-6 text-lg leading-8 text-gray-600">
               Connect with your fellow gardeners and share your knowledge.

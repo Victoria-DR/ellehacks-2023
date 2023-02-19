@@ -10,14 +10,12 @@ const Login = () => {
   const { register, handleSubmit, reset } = useForm();
   const [data, setData] = useState("");
 
-  const onSubmit = async(data) => {
-    const res = await axios.post(
-      'http://localhost:3001/login',
-      data
-    );
+  const onSubmit = async (data) => {
+    const res = await axios.post("http://localhost:3001/login", data);
     console.log(res);
     reset();
   };
+  const navigate = useNavigate();
   return (
     <div class="container mx-auto">
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -34,6 +32,7 @@ const Login = () => {
             <p className="mt-2 text-center text-sm text-gray-600">
               Or{" "}
               <a
+                onClick={() => navigate("/signup")}
                 href="#"
                 className="font-medium text-teal-600 hover:text-teal-500"
               >
@@ -99,6 +98,7 @@ const Login = () => {
             <div>
               <button
                 type="submit"
+                onClick={() => navigate("/search")}
                 className="group relative flex w-full justify-center rounded-md border border-transparent bg-teal-600 py-2 px-4 text-sm font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
