@@ -1,16 +1,17 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-// import "../index.css";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const CreateAccount = () => {
   const { register, handleSubmit, reset } = useForm();
   const [data, setData] = useState("");
 
+  const navigate = useNavigate();
   const onSubmit = async (data) => {
     const res = await axios.post("http://localhost:3001/signup", data);
-    console.log(res);
+    navigate("/choice");
     reset();
   };
 
