@@ -8,11 +8,8 @@ const CreateAccount = () => {
   const { register, handleSubmit, reset } = useForm();
   const [data, setData] = useState("");
 
-  const onSubmit = async(data) => {
-    const res = await axios.post(
-      'http://localhost:3001/signup',
-      data
-    );
+  const onSubmit = async (data) => {
+    const res = await axios.post("http://localhost:3001/signup", data);
     console.log(res);
     reset();
   };
