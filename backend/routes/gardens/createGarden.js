@@ -1,4 +1,4 @@
-const { doc, setDoc, FieldValue } = require('firebase/firestore');
+const { doc, setDoc, FieldValue, Timestamp } = require('firebase/firestore');
 
 const { db } = require('../../firebaseConfig');
 
@@ -13,7 +13,7 @@ const createGarden = async(req, res, next) => {
     posts: []
   });
 
-  const userRef = db.collection('users').doc(req.body.user);
+  const userRef = doc(db, 'users', req.body.user);
    await userRef.update({
     gardens: FieldValue.arrayUnion(req.body.gardenName)
   });
