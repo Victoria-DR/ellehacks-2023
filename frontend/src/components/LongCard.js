@@ -16,7 +16,7 @@ const LongCard = ({ nextWater, harvest, planted, imageLink, plant }) => {
             alt=""
           />
           <div>
-            <div className="uppercase tracking-wide text-md text-teal-500 font-semibold">
+            <div className="uppercase tracking-wide text-xs text-teal-500 font-semibold">
               {plant}
             </div>
             <div className="mt-2 text-slate-500 font-thin"></div>

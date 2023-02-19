@@ -56,35 +56,45 @@ const GardenProfile = () => {
               nextWater={"2"}
               harvest={"2"}
               planted={"5"}
-              imageLink={defaultImg}
+              imageLink={
+                "https://www.thespruce.com/thmb/S9mu0T9HfE1_DNnL7yderiiWwj0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tulips-planting-and-growing-tulips-1402137-06-5c18a69c82114b16bc8eb3baf69935e3.jpg"
+              }
               plant={"Tulip"}
             />
             <LongCard
               nextWater={"4"}
               harvest={"1"}
               planted={"3"}
-              imageLink={defaultImg}
+              imageLink={
+                "https://snaped.fns.usda.gov/sites/default/files/styles/crop_ratio_7_5/public/seasonal-produce/2018-05/cucumbers2.jpg?itok=YISLeW4e"
+              }
               plant={"Cucumber"}
             />
             <LongCard
               nextWater={"3"}
               harvest={"5"}
               planted={"2"}
-              imageLink={defaultImg}
+              imageLink={
+                "https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/03/romaine-lettuce-1296x728-body.jpg?w=1155&h=1528"
+              }
               plant={"Lettuce"}
             />
             <LongCard
               nextWater={"1"}
               harvest={"7"}
               planted={"1"}
-              imageLink={defaultImg}
-              plant={"Pepper"}
+              imageLink={
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Single_lavender_flower02.jpg/1200px-Single_lavender_flower02.jpg"
+              }
+              plant={"Lavender"}
             />
             <LongCard
               nextWater={"1"}
               harvest={"7"}
               planted={"1"}
-              imageLink={defaultImg}
+              imageLink={
+                "https://hips.hearstapps.com/hmg-prod/images/hot-sweet-and-chili-pepper-varieties-royalty-free-image-474683586-1558535763.jpg"
+              }
               plant={"Pepper"}
             />
           </ul>
