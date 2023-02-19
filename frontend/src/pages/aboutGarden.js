@@ -29,7 +29,7 @@ const getPosts = async(gardenName) => {
 const AboutGarden = () => {
   const [ data, setData ] = useState(null);
 
-  useEffect(async () => {
+  useEffect(async() => {
     try {
       const data = await getPosts('mango');
       setData(data);
@@ -43,8 +43,8 @@ const AboutGarden = () => {
       <p>
         Loading...
       </p>
-    )
-  }
+    );
+  };
 
   return (
     <>
