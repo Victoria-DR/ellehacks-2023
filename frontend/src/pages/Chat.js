@@ -60,17 +60,9 @@ const Chat = () => {
                 Response
               </label>
               <div className="mt-1">
-                <div className="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                  <div className="space-y-1 text-center">
-                    <svg
-                      className="mx-auto h-12 w-12 text-gray-400"
-                      stroke="currentColor"
-                      fill="none"
-                      viewBox="0 0 48 48"
-                      aria-hidden="true"
-                    ></svg>
-                  </div>
-                </div>
+                <textarea className="mt-1 flex w-full justify-center rounded-md border-2 border-dashed border-gray-300 mx-auto">
+                  REPLACE THIS WITH CHATPOT STUFF
+                </textarea>
               </div>
             </div>
           </div>
