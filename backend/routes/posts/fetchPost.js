@@ -10,7 +10,7 @@ const fetchPost = async(req, res, next) => {
     const postData = postSnap.data();
     res.send(postData);
   } else {
-    console.log('Post not found.');
+    console.log(`Post ${req.body.postId} not found.`);
   }
 };
 

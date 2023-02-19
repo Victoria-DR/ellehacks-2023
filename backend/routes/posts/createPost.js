@@ -1,4 +1,6 @@
-const { getDoc, FieldValue } = require('firebase/firestore');
+const axios = require('axios');
+const { arrayUnion, collection, doc, getDoc, setDoc, updateDoc, Timestamp } = require('firebase/firestore');
+const { getDownloadURL } = require('firebase/storage');
 
 const { db } = require('../../firebaseConfig');
 const detectToxicity = require('../../utils/detectToxicity');
@@ -7,35 +9,41 @@ const uploadPostImage = require('../../utils/uploadPostImage');
 
 const createPost = async(req, res, next) => {
   let toxicity;
-  await detectToxicity(req.body.postText)
+  await detectToxicity(req.body.message)
     .then((toxicityRes) => toxicity = toxicityRes);
   
   if (toxicity.body.classifications[0].prediction === 'Toxic') {
     res.send('Post failed; this text is toxic.');
   } else {
-    console.log(req.body);
-    const imageUrl = req.body.postImage ? await uploadPostImage(req.body) : '';
+    let imageUrl;
+    if (req.body.picture == {}) {
+      imageUrl = await uploadPostImage('test.jpg', req.body.picture['0']);
+    } else {
+      const generatedImage = await axios(`https://victoriadarosa.autocode.dev/ellehacks-2023-image-generator@dev/?caption=${req.body.message}`);
+      const uploadRes = await uploadPostImage('test.jpg', generatedImage);
+      imageUrl = await getDownloadURL(uploadRes);
+    }
 
     let postTitle;
     await generatePostTitle(req.body.message)
       .then((titleRes) => postTitle = titleRes.body.generations[0].text.trim());
 
-    const newPostRef = db.collection('posts').doc();
-    await newPostRef.set({
+    const newPostRef = doc(collection(db, 'posts'));
+    await setDoc(newPostRef, {
       author: req.body.user,
       datePosted: Timestamp.fromDate(new Date()),
       image: imageUrl,
       numLikes: 0,
       text: req.body.message,
-      title: postTitle.substring(postTitle.length - 2),
+      title: postTitle.substring(0, postTitle.length - 2),
       userLikes: []
     });
 
-    const gardenRef = db.collection('gardens').doc(req.body.garden);
+    const gardenRef = doc(db, 'gardens', req.body.garden);
     const gardenSnap = await getDoc(gardenRef);
     if (gardenSnap.exists()) {
-      await gardenRef.update({
-        posts: FieldValue.arrayUnion(newPostRef.id)
+      await updateDoc(gardenRef, {
+        posts: arrayUnion(newPostRef.id)
       });
     } else {
       console.log('Garden not found.');

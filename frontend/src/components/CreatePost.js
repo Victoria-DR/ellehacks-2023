@@ -1,6 +1,8 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
 
 const CreatePost = () => {
   const {
@@ -16,8 +18,25 @@ const CreatePost = () => {
     setPicture(URL.createObjectURL(e.target.files[0]));
   };
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async(data) => {
+    const res = await axios.post(
+      "http://localhost:3001/createPost",
+      {
+        message: data.message,
+        user: 'Victoria',
+        garden: 'mango',
+        picture: data.picture
+      }
+    );
+    if (res.data === "Post failed; this text is toxic.") {
+      toast.error(res.data, {
+        position: toast.POSITION.BOTTOM_CENTER
+      });
+    } else {
+      toast.success("Post uploaded successfully.", {
+        position: toast.POSITION.BOTTOM_CENTER
+      })
+    }
     resetField("message");
     setPicture(null);
   };
@@ -113,6 +132,7 @@ const CreatePost = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </>
   );
 };
