@@ -15,11 +15,12 @@ import GardenProfile from "./pages/gardenProfile";
 import PlantInfo from "./pages/PlantInfo";
 import SearchGarden from "./pages/SearchGarden";
 import Choice from "./pages/Choice";
+import NewNav from "./components/NewNav";
 
 function App() {
   return (
     <div className="bg-[#E9EFEA]">
-      <Navbar />
+      <NewNav />
 
       <Router>
         <Routes>

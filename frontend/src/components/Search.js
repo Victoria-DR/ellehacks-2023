@@ -138,6 +138,7 @@ export default function Search() {
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const communityGardens = [
+  { title: "Mango" },
   { title: "YorkU Gardens" },
   { title: "Hackagarden" },
   { title: "Garden Warrios" },
