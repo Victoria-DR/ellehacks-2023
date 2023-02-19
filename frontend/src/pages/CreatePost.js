@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -16,8 +17,19 @@ const CreatePost = () => {
     setPicture(URL.createObjectURL(e.target.files[0]));
   };
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const file = data.picture.item(0);
+    const newData = new FormData();
+    newData.append('text', data.message);
+    newData.append('image', file)
+    newData.append('user', 'Victoria')
+    console.log(newData);
+    const res = await axios.post(
+      'http://localhost:3001/createPost',
+      { newData },
+      { headers: { 'Content-Type': 'multipart/form-data' } }
+    );
+    console.log(res);
     resetField("message");
     setPicture(null);
   };
@@ -91,7 +103,7 @@ const CreatePost = () => {
                             <br />
                             <br />
                             <img
-                              className="image"
+                              className="image max-h-56"
                               src={picture && picture}
                               alt=""
                             />

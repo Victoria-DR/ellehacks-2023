@@ -7,16 +7,17 @@ const uploadPostImage = require('../../utils/uploadPostImage');
 
 const createPost = async(req, res, next) => {
   let toxicity;
-  await detectToxicity(req.body.text)
+  await detectToxicity(req.body.postText)
     .then((toxicityRes) => toxicity = toxicityRes);
   
   if (toxicity.body.classifications[0].prediction === 'Toxic') {
     res.send('Post failed; this text is toxic.');
   } else {
-    const imageUrl = req.body.image ? await uploadPostImage(req.body.image) : '';
+    console.log(req.body);
+    const imageUrl = req.body.postImage ? await uploadPostImage(req.body) : '';
 
     let postTitle;
-    await generatePostTitle(req.body.text)
+    await generatePostTitle(req.body.message)
       .then((titleRes) => postTitle = titleRes.body.generations[0].text.trim());
 
     const newPostRef = db.collection('posts').doc();
@@ -25,7 +26,7 @@ const createPost = async(req, res, next) => {
       datePosted: Timestamp.fromDate(new Date()),
       image: imageUrl,
       numLikes: 0,
-      text: req.body.text,
+      text: req.body.message,
       title: postTitle.substring(postTitle.length - 2),
       userLikes: []
     });
