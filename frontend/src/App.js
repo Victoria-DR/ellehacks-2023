@@ -13,10 +13,11 @@ import CreateGarden from "./pages/createGarden";
 import GardenProfile from "./pages/gardenProfile";
 import CreatePost from "./pages/CreatePost";
 import PlantInfo from "./pages/PlantInfo";
+import SearchGarden from "./pages/SearchGarden";
 
 function App() {
   return (
-    <div className="bg-[#E9EFEA] mb-200">
+    <div className="bg-[#E9EFEA]">
       <Navbar />
 
       <Router>
@@ -30,6 +31,7 @@ function App() {
           <Route path="/garden-profile" element={<GardenProfile />} />
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/plantInfo" element={<PlantInfo />} />
+          <Route path="/search" element={<SearchGarden />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </Router>
